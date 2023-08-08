@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Academic Project Page</title>
+  <link rel="icon" type="image/x-icon" href="static/images/logo.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Sketch RL: Interactive Sketch Generation for Long-Horizon Tasks via
+              Vision-based Skill Predictor</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a target="_blank">Zhenyang Lin</a>,</span>
+                <span class="author-block">
+                  <a target="_blank">Yurou Chen</a>,</span>
+                  <span class="author-block">
+                    <a target="_blank">Zhi-Yong Liu</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">State Key Laboratory of Multimodal Artificial Intelligence Systems,<br> Institute of Automation, Chinese Academy of Sciences
+                    </span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/root.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            For autonomous robots, it is desirable to learn coordination of primitive skills that can effectively solve long-horizon tasks and perform novel ones. Recent advances in hierarchical policy learning have shown that decomposing complex tasks into sequences of primitive skills which are called sketches can enable robots to perform directed exploration in challenging manipulation tasks. However, they usually fall short in sequencing skills in a new task without retraining as the task sketches are almost hard-coded or learned by deep reinforcement learning. To improve exploration efficiency for long-horizon tasks, we propose Sketch RL, a hierarchical framework that combines supervised learning with reinforcement learning interactively generates the task sketch, and utilizes it as the curriculum to guide low-level skill learning. Furthermore, to allow for multitask decomposition and generalizing few-shot to new tasks, our method exploits a Vision-based Skill Predictor (VSP) to capture shared subtask structure. Extensive experiments on challenging manipulation tasks demonstrate that Sketch RL substantially outperforms other prior baseline methods and is capable of adapting to new tasks with different sketches and real-world settings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+      <div class="container">
+        <h2 class="title">Sketch RL Overview</h2>
+          <div style="text-align: center;">
+            <!-- Teaser image goes here -->
+            <img src="static/images/model_overview.png" alt="Teaser Image" style="width:70%;height:auto; display: block; margin: 0 auto;">
+          </div>
+          <div class="content has-text-justified">
+            <p width="is-size-3">
+              we develop Sketch RL, an interactive hierarchical policy learning system that embeds skill transition dynamics of tasks into the process of low-level skill learning, which enables improvement in exploration efficiency for complex manipulation tasks and generalization to new tasks unseen during training. 
+              The first phase is to train the Vision-based Skill Predictor (VSP) module to predict the next primitive skill with visual inputs by comparing the structural similarity between the current frame and different
+              key frames of a task. By capturing the shared subtask structure, this paradigm of supervised learning based on visual
+              inputs can in principle enable the high-level task planner to
+              deal with multitask decomposition and generalization few-
+              shot to new tasks.
+            </p>     
+            </div>
+      </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Model Architecture</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div style="text-align: center;">
+            <!-- Teaser image goes here -->
+            <img src="static/images/method.png" alt="Teaser Image" style="width:100%;height:auto; display: block; margin: 0 auto;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Simulated Manipulation Tasks</h2>
+      <div class="content has-text-justified">
+        <p width="is-size-3">
+          We evaluate our Sketch RL method on four challenging manipulation tasks from robosuite framework. 
+          NutAssembly (N): the robot aims to pick the round nut and then place it into a cylindrical peg. 
+          Stack (S): a red cube need to be stacked on top of a green cube.  
+          PickPlaceMilk (M): the robot need to pick a milk box and move it to the target bin. 
+          StackThree (ST): a red cube needs to be stacked on top of a green cube, then a blue cube needs to be stacked on top of the red cube.
+          To train the Sketch RL, the simulation environment provides high-level visual observations including the end-effector and operating objects at fixed intervals and low-dimensional states consisting of proprioceptive
+states and task-related information at each decision-making step.
+        </p>     
+      </div>
+      <div style="text-align: center;">
+      <table style="margin:auto;">
+        <tbody><tr><td>
+      
+          <!-- <tr>
+              <td style="width:100%">
+                <h2 align="center">Real Kitchen</h2>
+              </td>
+          </tr> -->
+          <tr>
+              <td style="width:25%">
+                <h2 style="text-align: center;">NutAssembly (N)</h2>
+              </td>
+              <td style="width:25%">
+                <h2 style="text-align: center;">Stack (S)</h2>
+              </td>
+              <td style="width:25%">
+                <h2 style="text-align: center;">PickPlaceMilk (M)</h2>
+              </td>
+              <td style="width:25%">
+                <h2 style="text-align: center;">StackThree (ST)</h2>
+              </td>
+          </tr>
+          <tr>
+              <td style="width:25%;margin:auto;">
+              <video muted="" autoplay="" loop="" width="80%">
+                  <source src="static/videos/nut_demo.mp4" type="video/mp4" />
+              </video>
+              </td>
+              <td style="width:25%;margin:auto;">
+              <video muted="" autoplay="" loop="" width="80%">
+                  <source src="static/videos/stack_demo.mp4" type="video/mp4" />
+              </video>
+              </td>
+              <td style="width:25%;margin:auto;">
+                <video muted="" autoplay="" loop="" width="80%">
+                    <source src="static/videos/pnp_demo.mp4" type="video/mp4" />
+                </video>
+                </td>
+                <td style="width:25%;margin:auto;">
+                <video muted="" autoplay="" loop="" width="80%">
+                    <source src="static/videos/stack_two_demo.mp4" type="video/mp4" />
+                </video>
+                </td>
+          </tr>
+      </td></tr>
+      </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Simulation Results</h2>
+      <div class="content has-text-justified">
+        <p width="is-size-3">
+          The primary experimental question in this paper is whether the learned VSP module is capable of multitask decomposition and improving the exploration efficiency of learning
+          policies for solving complex manipulation tasks. We compare
+          our method to relevant prior work which performs either
+          reinforcement learning method from scratch or hierarchical policy learning methods. Note that four manipulation tasks share one VSP module trained on datasets {N, S, M} for
+          generating task sketches.
+        </p>     
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div style="text-align: center;">
+            <!-- Teaser image goes here -->
+            <img src="static/images/main_result.png" alt="Teaser Image" style="width:100%;height:auto; display: block; margin: 0 auto;">
+          </div>
+        </div>
+      </div>
+      <div class="content has-text-justified">
+        <p width="is-size-3">
+          To evaluate the performance of the VSP module when generalizing few-shot to new tasks, we conduct the cross-task experiments by selecting one or two
+          tasks for training and a new task for testing. These results show that the attention mechanism plays an important role in better capturing object-agent interaction features of a task that might be shared with different tasks and be predictive of corresponding skills.
+        </p>     
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div style="text-align: center;">
+            <!-- Teaser image goes here -->
+            <img src="static/images/table.png" alt="Teaser Image" style="width:80%;height:auto; display: block; margin: 0 auto;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Real-World Evaluation</h2>
+      <div class="content has-text-justified">
+        <p width="is-size-3">
+          To validate the practicality of Sketch RL for solving multi-stage manipulation tasks, we also perform the real-world cross-robot evaluations in Lift and PickPlaceMilk tasks.
+          Quantitatively, we evaluate 20 trials for each task and achieve the average success rate 100% on Lift and 90% on PickPlaceMilk.
+        </p>     
+      </div>
+          <table border="0" cellspacing="10" cellpadding="0" align="center">
+            <tbody><tr><td>
+          
+              <!-- <tr>
+                  <td style="width:100%">
+                    <h2 align="center">Real Kitchen</h2>
+                  </td>
+              </tr> -->
+              <tr>
+                  <td style="width:45%">
+                    <h2 align="center">Real-Lift</h2>
+                  </td>
+                  <td style="width:45%">
+                    <h2 align="center">Real-PickPlaceMilk</h2>
+                  </td>
+              </tr>
+              <tr>
+                  <td style="width:45%">
+                  <video muted="" autoplay="" loop="" width="98%">
+                      <source src="static/videos/L1.mp4" type="video/mp4" />
+                  </video>
+                  </td>
+                  <td style="width:45%">
+                  <video muted="" autoplay="" loop="" width="98%">
+                      <source src="static/videos/M1.mp4" type="video/mp4" />
+                  </video>
+                  </td>
+              </tr>
+          </td></tr>
+          </tbody>
+          </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Supplementary</h2>
+      <iframe  src="static/pdfs/root.pdf" width="100%" height="950">
+          </iframe>
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
